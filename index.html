@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contagem Regressiva Galáctica</title>
+    <title>Contando o tempo de uma Estrela</title>
     <style>
         body {
             margin: 0;
@@ -11,7 +11,7 @@
             font-family: 'Arial', sans-serif;
             color: #FFD700;
             text-align: center;
-            background: url('https://source.unsplash.com/1600x900/?astronomy,space') no-repeat center center fixed;
+            background: url('https://apod.nasa.gov/apod/image/2501/B209V773Tau.png') no-repeat center center fixed;
             background-size: cover;
             overflow: hidden;
         }
@@ -39,7 +39,9 @@
     </style>
 </head>
 <body>
-    <h1>Que a Força Esteja com Você!</h1>
+    <h1>Contando o tempo de uma Estrela que brilha cada vez mais</h1>
+    <h2>since 14.01.2025 às 7:20</h2>
+
     <div id="countdown" class="fade-in"></div>
 
     <script>
@@ -54,7 +56,7 @@
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
             document.getElementById('countdown').innerHTML =
-                `${days} Dias, ${hours} Horas, ${minutes} Minutos desde o evento!`;
+                `${days} Dias, ${hours} Horas, ${minutes} Minutos`;
         }
 
         updateCountdown();
@@ -62,3 +64,4 @@
     </script>
 </body>
 </html>
+
