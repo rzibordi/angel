@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem Regressiva Galáctica</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #FFD700;
+            text-align: center;
+            background: url('https://source.unsplash.com/1600x900/?astronomy,space') no-repeat center center fixed;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 4em;
+            margin-top: 20vh;
+            text-shadow: 0 0 20px #FFD700, 0 0 30px #FF4500;
+        }
+
+        #countdown {
+            font-size: 3em;
+            margin-top: 20px;
+            text-shadow: 0 0 20px #FFD700, 0 0 30px #FF4500;
+        }
+
+        .fade-in {
+            animation: fadeIn 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0.5; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Que a Força Esteja com Você!</h1>
+    <div id="countdown" class="fade-in"></div>
+
+    <script>
+        const countdownDate = new Date('January 14, 2025 07:20:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = now - countdownDate;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById('countdown').innerHTML =
+                `${days} Dias, ${hours} Horas, ${minutes} Minutos desde o evento!`;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 60000); // Atualiza a cada minuto
+    </script>
+</body>
+</html>
